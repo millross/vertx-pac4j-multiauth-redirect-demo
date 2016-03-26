@@ -1,3 +1,23 @@
 = vertx-pac4j-multiauth-redirect-demo
 
 A small demo project to show how to use multi authorizations in vertx-pac4j, preventing the user from logging in multiple times via different mechanisms
+
+To run the project, first issue the command
+
+mvn clean package
+
+at the command line, and then
+
+java -jar target/vertx-pac4j-multiauth-demo-1.0.0-SNAPSHOT-fat.jar
+
+Note that the resources to hit are
+
+http://localhost:8080/protected/index.html
+http://localhost:8080/protected/test.html
+http://localhost:8080/login
+
+At the moment it's possible to hit http://localhost:8080/login even when already logged in - this is a bug
+in the sample. The intent is that hitting the login url when already logged in will just redirect to
+http://localhost:8080/protected/index.html - the default landing page following login (although it will be possible
+to hit any protected resource directly when already logged in, or if not logged in, a login process will be triggered)
+
