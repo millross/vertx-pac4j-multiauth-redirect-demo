@@ -4,17 +4,17 @@ A small demo project to show how to use multi authorizations in vertx-pac4j, pre
 
 To run the project, first issue the command
 
-mvn clean package
+ mvn clean package
 
 at the command line, and then
 
-java -jar target/vertx-pac4j-multiauth-demo-1.0.0-SNAPSHOT-fat.jar
+ java -jar target/vertx-pac4j-multiauth-demo-1.0.0-SNAPSHOT-fat.jar
 
 Note that the resources to hit are
 
-http://localhost:8080/protected/index.html<br>
-http://localhost:8080/protected/test.html<br>
-http://localhost:8080/login<br>
+http://localhost:8080/protected/index.html +
+http://localhost:8080/protected/test.html +
+http://localhost:8080/login +
 
 At the moment it's possible to hit http://localhost:8080/login even when already logged in - this is a bug
 in the sample. The intent is that hitting the login url when already logged in will just redirect to
