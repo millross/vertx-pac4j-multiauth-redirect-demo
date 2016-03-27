@@ -76,7 +76,7 @@ public class ServerVerticle extends AbstractVerticle {
         router.post("/callback").handler(BodyHandler.create().setMergeFormAttributes(true));
         router.post("/callback").handler(callbackHandler);
 
-        final StaticHandler staticHandler = StaticHandler.create("webapp");
+        final StaticHandler staticHandler = StaticHandler.create("webapp").setCachingEnabled(false);
         router.route("/*").handler(staticHandler);
 
         vertx.createHttpServer().requestHandler(router::accept).listen(8080);
